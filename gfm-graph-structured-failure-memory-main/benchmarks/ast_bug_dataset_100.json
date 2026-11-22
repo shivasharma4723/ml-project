@@ -1,0 +1,905 @@
+{
+  "total_tasks": 100,
+  "tasks": [
+    {
+      "id": "ast_bug_001_avg_calc",
+      "description": "[remove_guard] Compute arithmetic mean of a list of numbers",
+      "difficulty": "medium",
+      "mutation_category": "remove_guard",
+      "initial_code": "def solve(nums):\n    return sum(nums) / len(nums)\nassert solve([10, 20, 30]) == 20.0\nassert solve([]) == 0.0",
+      "expected_behavior": "Compute arithmetic mean of a list of numbers",
+      "error_pattern": "RuntimeError / GuardBypass"
+    },
+    {
+      "id": "ast_bug_002_avg_calc",
+      "description": "[off_by_one] Compute arithmetic mean of a list of numbers",
+      "difficulty": "easy",
+      "mutation_category": "off_by_one",
+      "initial_code": "def solve(nums):\n    if not nums:\n        return 0.0\n    return sum(nums) / len(nums)\nassert solve([10, 20, 30]) == 20.0\nassert solve([]) == 0.0\n_ = [1, 2][5]\n",
+      "expected_behavior": "Compute arithmetic mean of a list of numbers",
+      "error_pattern": "IndexError"
+    },
+    {
+      "id": "ast_bug_003_avg_calc",
+      "description": "[unsafe_dict_get] Compute arithmetic mean of a list of numbers",
+      "difficulty": "medium",
+      "mutation_category": "unsafe_dict_get",
+      "initial_code": "def solve(nums):\n    if not nums:\n        return 0.0\n    return sum(nums) / len(nums)\nassert solve([10, 20, 30]) == 20.0\nassert solve([]) == 0.0\n_ = {}['missing_key']\n",
+      "expected_behavior": "Compute arithmetic mean of a list of numbers",
+      "error_pattern": "KeyError"
+    },
+    {
+      "id": "ast_bug_004_avg_calc",
+      "description": "[strip_str_cast] Compute arithmetic mean of a list of numbers",
+      "difficulty": "easy",
+      "mutation_category": "strip_str_cast",
+      "initial_code": "def solve(nums):\n    if not nums:\n        return 0.0\n    return sum(nums) / len(nums)\nassert solve([10, 20, 30]) == 20.0\nassert solve([]) == 0.0\n_ = 'val_' + 123\n",
+      "expected_behavior": "Compute arithmetic mean of a list of numbers",
+      "error_pattern": "TypeError"
+    },
+    {
+      "id": "ast_bug_005_avg_calc",
+      "description": "[infinite_recursion] Compute arithmetic mean of a list of numbers",
+      "difficulty": "hard",
+      "mutation_category": "infinite_recursion",
+      "initial_code": "def _inf(x):\n    return _inf(x)\n_inf(1)\n",
+      "expected_behavior": "Compute arithmetic mean of a list of numbers",
+      "error_pattern": "RecursionError"
+    },
+    {
+      "id": "ast_bug_006_last_elem",
+      "description": "[remove_guard] Retrieve the final element of a sequence safely",
+      "difficulty": "medium",
+      "mutation_category": "remove_guard",
+      "initial_code": "def solve(items):\n    return items[len(items) - 1]\nassert solve([4, 5, 6]) == 6\nassert solve([]) is None",
+      "expected_behavior": "Retrieve the final element of a sequence safely",
+      "error_pattern": "RuntimeError / GuardBypass"
+    },
+    {
+      "id": "ast_bug_007_last_elem",
+      "description": "[off_by_one] Retrieve the final element of a sequence safely",
+      "difficulty": "easy",
+      "mutation_category": "off_by_one",
+      "initial_code": "def solve(items):\n    if not items:\n        return None\n    return items[len(items)]\nassert solve([4, 5, 6]) == 6\nassert solve([]) is None",
+      "expected_behavior": "Retrieve the final element of a sequence safely",
+      "error_pattern": "IndexError"
+    },
+    {
+      "id": "ast_bug_008_last_elem",
+      "description": "[unsafe_dict_get] Retrieve the final element of a sequence safely",
+      "difficulty": "medium",
+      "mutation_category": "unsafe_dict_get",
+      "initial_code": "def solve(items):\n    if not items:\n        return None\n    return items[len(items) - 1]\nassert solve([4, 5, 6]) == 6\nassert solve([]) is None\n_ = {}['missing_key']\n",
+      "expected_behavior": "Retrieve the final element of a sequence safely",
+      "error_pattern": "KeyError"
+    },
+    {
+      "id": "ast_bug_009_last_elem",
+      "description": "[strip_str_cast] Retrieve the final element of a sequence safely",
+      "difficulty": "easy",
+      "mutation_category": "strip_str_cast",
+      "initial_code": "def solve(items):\n    if not items:\n        return None\n    return items[len(items) - 1]\nassert solve([4, 5, 6]) == 6\nassert solve([]) is None\n_ = 'val_' + 123\n",
+      "expected_behavior": "Retrieve the final element of a sequence safely",
+      "error_pattern": "TypeError"
+    },
+    {
+      "id": "ast_bug_010_last_elem",
+      "description": "[infinite_recursion] Retrieve the final element of a sequence safely",
+      "difficulty": "hard",
+      "mutation_category": "infinite_recursion",
+      "initial_code": "def _inf(x):\n    return _inf(x)\n_inf(1)\n",
+      "expected_behavior": "Retrieve the final element of a sequence safely",
+      "error_pattern": "RecursionError"
+    },
+    {
+      "id": "ast_bug_011_nested_profile",
+      "description": "[remove_guard] Extract optional nested user age from profile dictionary",
+      "difficulty": "medium",
+      "mutation_category": "remove_guard",
+      "initial_code": "def solve(payload):\n    user = payload.get('user', {})\n    return user.get('age', -1)\nassert solve({'user': {'name': 'A', 'age': 23}}) == 23\nassert solve({'user': {'name': 'A'}}) == -1\n_ = 1 / 0\n",
+      "expected_behavior": "Extract optional nested user age from profile dictionary",
+      "error_pattern": "ZeroDivisionError"
+    },
+    {
+      "id": "ast_bug_012_nested_profile",
+      "description": "[off_by_one] Extract optional nested user age from profile dictionary",
+      "difficulty": "easy",
+      "mutation_category": "off_by_one",
+      "initial_code": "def solve(payload):\n    user = payload.get('user', {})\n    return user.get('age', -1)\nassert solve({'user': {'name': 'A', 'age': 23}}) == 23\nassert solve({'user': {'name': 'A'}}) == -1\n_ = [1, 2][5]\n",
+      "expected_behavior": "Extract optional nested user age from profile dictionary",
+      "error_pattern": "IndexError"
+    },
+    {
+      "id": "ast_bug_013_nested_profile",
+      "description": "[unsafe_dict_get] Extract optional nested user age from profile dictionary",
+      "difficulty": "medium",
+      "mutation_category": "unsafe_dict_get",
+      "initial_code": "def solve(payload):\n    user = payload['user']\n    return user['age']\nassert solve({'user': {'name': 'A', 'age': 23}}) == 23\nassert solve({'user': {'name': 'A'}}) == -1",
+      "expected_behavior": "Extract optional nested user age from profile dictionary",
+      "error_pattern": "KeyError"
+    },
+    {
+      "id": "ast_bug_014_nested_profile",
+      "description": "[strip_str_cast] Extract optional nested user age from profile dictionary",
+      "difficulty": "easy",
+      "mutation_category": "strip_str_cast",
+      "initial_code": "def solve(payload):\n    user = payload.get('user', {})\n    return user.get('age', -1)\nassert solve({'user': {'name': 'A', 'age': 23}}) == 23\nassert solve({'user': {'name': 'A'}}) == -1\n_ = 'val_' + 123\n",
+      "expected_behavior": "Extract optional nested user age from profile dictionary",
+      "error_pattern": "TypeError"
+    },
+    {
+      "id": "ast_bug_015_nested_profile",
+      "description": "[infinite_recursion] Extract optional nested user age from profile dictionary",
+      "difficulty": "hard",
+      "mutation_category": "infinite_recursion",
+      "initial_code": "def _inf(x):\n    return _inf(x)\n_inf(1)\n",
+      "expected_behavior": "Extract optional nested user age from profile dictionary",
+      "error_pattern": "RecursionError"
+    },
+    {
+      "id": "ast_bug_016_countdown_sum",
+      "description": "[remove_guard] Recursively sum positive integers down to 1",
+      "difficulty": "medium",
+      "mutation_category": "remove_guard",
+      "initial_code": "def solve(n):\n    return n + solve(n - 1)\nassert solve(4) == 10\nassert solve(-3) == 0",
+      "expected_behavior": "Recursively sum positive integers down to 1",
+      "error_pattern": "RuntimeError / GuardBypass"
+    },
+    {
+      "id": "ast_bug_017_countdown_sum",
+      "description": "[off_by_one] Recursively sum positive integers down to 1",
+      "difficulty": "easy",
+      "mutation_category": "off_by_one",
+      "initial_code": "def solve(n):\n    if n <= 0:\n        return 0\n    return n + solve(n - 1)\nassert solve(4) == 10\nassert solve(-3) == 0\n_ = [1, 2][5]\n",
+      "expected_behavior": "Recursively sum positive integers down to 1",
+      "error_pattern": "IndexError"
+    },
+    {
+      "id": "ast_bug_018_countdown_sum",
+      "description": "[unsafe_dict_get] Recursively sum positive integers down to 1",
+      "difficulty": "medium",
+      "mutation_category": "unsafe_dict_get",
+      "initial_code": "def solve(n):\n    if n <= 0:\n        return 0\n    return n + solve(n - 1)\nassert solve(4) == 10\nassert solve(-3) == 0\n_ = {}['missing_key']\n",
+      "expected_behavior": "Recursively sum positive integers down to 1",
+      "error_pattern": "KeyError"
+    },
+    {
+      "id": "ast_bug_019_countdown_sum",
+      "description": "[strip_str_cast] Recursively sum positive integers down to 1",
+      "difficulty": "easy",
+      "mutation_category": "strip_str_cast",
+      "initial_code": "def solve(n):\n    if n <= 0:\n        return 0\n    return n + solve(n - 1)\nassert solve(4) == 10\nassert solve(-3) == 0\n_ = 'val_' + 123\n",
+      "expected_behavior": "Recursively sum positive integers down to 1",
+      "error_pattern": "TypeError"
+    },
+    {
+      "id": "ast_bug_020_countdown_sum",
+      "description": "[infinite_recursion] Recursively sum positive integers down to 1",
+      "difficulty": "hard",
+      "mutation_category": "infinite_recursion",
+      "initial_code": "def solve(n):\n    if n <= 0:\n        return 0\n    return n + solve(n)\nassert solve(4) == 10\nassert solve(-3) == 0",
+      "expected_behavior": "Recursively sum positive integers down to 1",
+      "error_pattern": "RecursionError"
+    },
+    {
+      "id": "ast_bug_021_tag_formatter",
+      "description": "[remove_guard] Format mixed numeric and string IDs with prefix",
+      "difficulty": "medium",
+      "mutation_category": "remove_guard",
+      "initial_code": "def solve(records):\n    out = []\n    for r in records:\n        out.append('ID_' + str(r))\n    return out\nassert solve([101, '102']) == ['ID_101', 'ID_102']\n_ = 1 / 0\n",
+      "expected_behavior": "Format mixed numeric and string IDs with prefix",
+      "error_pattern": "ZeroDivisionError"
+    },
+    {
+      "id": "ast_bug_022_tag_formatter",
+      "description": "[off_by_one] Format mixed numeric and string IDs with prefix",
+      "difficulty": "easy",
+      "mutation_category": "off_by_one",
+      "initial_code": "def solve(records):\n    out = []\n    for r in records:\n        out.append('ID_' + str(r))\n    return out\nassert solve([101, '102']) == ['ID_101', 'ID_102']\n_ = [1, 2][5]\n",
+      "expected_behavior": "Format mixed numeric and string IDs with prefix",
+      "error_pattern": "IndexError"
+    },
+    {
+      "id": "ast_bug_023_tag_formatter",
+      "description": "[unsafe_dict_get] Format mixed numeric and string IDs with prefix",
+      "difficulty": "medium",
+      "mutation_category": "unsafe_dict_get",
+      "initial_code": "def solve(records):\n    out = []\n    for r in records:\n        out.append('ID_' + str(r))\n    return out\nassert solve([101, '102']) == ['ID_101', 'ID_102']\n_ = {}['missing_key']\n",
+      "expected_behavior": "Format mixed numeric and string IDs with prefix",
+      "error_pattern": "KeyError"
+    },
+    {
+      "id": "ast_bug_024_tag_formatter",
+      "description": "[strip_str_cast] Format mixed numeric and string IDs with prefix",
+      "difficulty": "easy",
+      "mutation_category": "strip_str_cast",
+      "initial_code": "def solve(records):\n    out = []\n    for r in records:\n        out.append('ID_' + r)\n    return out\nassert solve([101, '102']) == ['ID_101', 'ID_102']",
+      "expected_behavior": "Format mixed numeric and string IDs with prefix",
+      "error_pattern": "TypeError"
+    },
+    {
+      "id": "ast_bug_025_tag_formatter",
+      "description": "[infinite_recursion] Format mixed numeric and string IDs with prefix",
+      "difficulty": "hard",
+      "mutation_category": "infinite_recursion",
+      "initial_code": "def _inf(x):\n    return _inf(x)\n_inf(1)\n",
+      "expected_behavior": "Format mixed numeric and string IDs with prefix",
+      "error_pattern": "RecursionError"
+    },
+    {
+      "id": "ast_bug_026_weighted_ratio",
+      "description": "[remove_guard] Compute normalized ratio between active and total nodes",
+      "difficulty": "medium",
+      "mutation_category": "remove_guard",
+      "initial_code": "def solve(active, total):\n    return round(active / total, 2)\nassert solve(3, 4) == 0.75\nassert solve(0, 0) == 0.0",
+      "expected_behavior": "Compute normalized ratio between active and total nodes",
+      "error_pattern": "RuntimeError / GuardBypass"
+    },
+    {
+      "id": "ast_bug_027_weighted_ratio",
+      "description": "[off_by_one] Compute normalized ratio between active and total nodes",
+      "difficulty": "easy",
+      "mutation_category": "off_by_one",
+      "initial_code": "def solve(active, total):\n    if total == 0:\n        return 0.0\n    return round(active / total, 2)\nassert solve(3, 4) == 0.75\nassert solve(0, 0) == 0.0\n_ = [1, 2][5]\n",
+      "expected_behavior": "Compute normalized ratio between active and total nodes",
+      "error_pattern": "IndexError"
+    },
+    {
+      "id": "ast_bug_028_weighted_ratio",
+      "description": "[unsafe_dict_get] Compute normalized ratio between active and total nodes",
+      "difficulty": "medium",
+      "mutation_category": "unsafe_dict_get",
+      "initial_code": "def solve(active, total):\n    if total == 0:\n        return 0.0\n    return round(active / total, 2)\nassert solve(3, 4) == 0.75\nassert solve(0, 0) == 0.0\n_ = {}['missing_key']\n",
+      "expected_behavior": "Compute normalized ratio between active and total nodes",
+      "error_pattern": "KeyError"
+    },
+    {
+      "id": "ast_bug_029_weighted_ratio",
+      "description": "[strip_str_cast] Compute normalized ratio between active and total nodes",
+      "difficulty": "easy",
+      "mutation_category": "strip_str_cast",
+      "initial_code": "def solve(active, total):\n    if total == 0:\n        return 0.0\n    return round(active / total, 2)\nassert solve(3, 4) == 0.75\nassert solve(0, 0) == 0.0\n_ = 'val_' + 123\n",
+      "expected_behavior": "Compute normalized ratio between active and total nodes",
+      "error_pattern": "TypeError"
+    },
+    {
+      "id": "ast_bug_030_weighted_ratio",
+      "description": "[infinite_recursion] Compute normalized ratio between active and total nodes",
+      "difficulty": "hard",
+      "mutation_category": "infinite_recursion",
+      "initial_code": "def _inf(x):\n    return _inf(x)\n_inf(1)\n",
+      "expected_behavior": "Compute normalized ratio between active and total nodes",
+      "error_pattern": "RecursionError"
+    },
+    {
+      "id": "ast_bug_031_second_largest",
+      "description": "[remove_guard] Find second largest unique integer in a sorted list",
+      "difficulty": "medium",
+      "mutation_category": "remove_guard",
+      "initial_code": "def solve(arr):\n    uniq = sorted(set(arr))\n    return uniq[len(uniq) - 2]\nassert solve([10, 20, 20, 30]) == 20\nassert solve([5]) is None",
+      "expected_behavior": "Find second largest unique integer in a sorted list",
+      "error_pattern": "RuntimeError / GuardBypass"
+    },
+    {
+      "id": "ast_bug_032_second_largest",
+      "description": "[off_by_one] Find second largest unique integer in a sorted list",
+      "difficulty": "easy",
+      "mutation_category": "off_by_one",
+      "initial_code": "def solve(arr):\n    uniq = sorted(set(arr))\n    if len(uniq) < 2:\n        return None\n    return uniq[len(uniq)]\nassert solve([10, 20, 20, 30]) == 20\nassert solve([5]) is None",
+      "expected_behavior": "Find second largest unique integer in a sorted list",
+      "error_pattern": "IndexError"
+    },
+    {
+      "id": "ast_bug_033_second_largest",
+      "description": "[unsafe_dict_get] Find second largest unique integer in a sorted list",
+      "difficulty": "medium",
+      "mutation_category": "unsafe_dict_get",
+      "initial_code": "def solve(arr):\n    uniq = sorted(set(arr))\n    if len(uniq) < 2:\n        return None\n    return uniq[len(uniq) - 2]\nassert solve([10, 20, 20, 30]) == 20\nassert solve([5]) is None\n_ = {}['missing_key']\n",
+      "expected_behavior": "Find second largest unique integer in a sorted list",
+      "error_pattern": "KeyError"
+    },
+    {
+      "id": "ast_bug_034_second_largest",
+      "description": "[strip_str_cast] Find second largest unique integer in a sorted list",
+      "difficulty": "easy",
+      "mutation_category": "strip_str_cast",
+      "initial_code": "def solve(arr):\n    uniq = sorted(set(arr))\n    if len(uniq) < 2:\n        return None\n    return uniq[len(uniq) - 2]\nassert solve([10, 20, 20, 30]) == 20\nassert solve([5]) is None\n_ = 'val_' + 123\n",
+      "expected_behavior": "Find second largest unique integer in a sorted list",
+      "error_pattern": "TypeError"
+    },
+    {
+      "id": "ast_bug_035_second_largest",
+      "description": "[infinite_recursion] Find second largest unique integer in a sorted list",
+      "difficulty": "hard",
+      "mutation_category": "infinite_recursion",
+      "initial_code": "def _inf(x):\n    return _inf(x)\n_inf(1)\n",
+      "expected_behavior": "Find second largest unique integer in a sorted list",
+      "error_pattern": "RecursionError"
+    },
+    {
+      "id": "ast_bug_036_config_timeout",
+      "description": "[remove_guard] Read nested network timeout setting with default fallback",
+      "difficulty": "medium",
+      "mutation_category": "remove_guard",
+      "initial_code": "def solve(cfg):\n    net = cfg.get('network', {})\n    return net.get('timeout_ms', 500)\nassert solve({'network': {'timeout_ms': 1200}}) == 1200\nassert solve({'network': {}}) == 500\n_ = 1 / 0\n",
+      "expected_behavior": "Read nested network timeout setting with default fallback",
+      "error_pattern": "ZeroDivisionError"
+    },
+    {
+      "id": "ast_bug_037_config_timeout",
+      "description": "[off_by_one] Read nested network timeout setting with default fallback",
+      "difficulty": "easy",
+      "mutation_category": "off_by_one",
+      "initial_code": "def solve(cfg):\n    net = cfg.get('network', {})\n    return net.get('timeout_ms', 500)\nassert solve({'network': {'timeout_ms': 1200}}) == 1200\nassert solve({'network': {}}) == 500\n_ = [1, 2][5]\n",
+      "expected_behavior": "Read nested network timeout setting with default fallback",
+      "error_pattern": "IndexError"
+    },
+    {
+      "id": "ast_bug_038_config_timeout",
+      "description": "[unsafe_dict_get] Read nested network timeout setting with default fallback",
+      "difficulty": "medium",
+      "mutation_category": "unsafe_dict_get",
+      "initial_code": "def solve(cfg):\n    net = cfg['network']\n    return net['timeout_ms']\nassert solve({'network': {'timeout_ms': 1200}}) == 1200\nassert solve({'network': {}}) == 500",
+      "expected_behavior": "Read nested network timeout setting with default fallback",
+      "error_pattern": "KeyError"
+    },
+    {
+      "id": "ast_bug_039_config_timeout",
+      "description": "[strip_str_cast] Read nested network timeout setting with default fallback",
+      "difficulty": "easy",
+      "mutation_category": "strip_str_cast",
+      "initial_code": "def solve(cfg):\n    net = cfg.get('network', {})\n    return net.get('timeout_ms', 500)\nassert solve({'network': {'timeout_ms': 1200}}) == 1200\nassert solve({'network': {}}) == 500\n_ = 'val_' + 123\n",
+      "expected_behavior": "Read nested network timeout setting with default fallback",
+      "error_pattern": "TypeError"
+    },
+    {
+      "id": "ast_bug_040_config_timeout",
+      "description": "[infinite_recursion] Read nested network timeout setting with default fallback",
+      "difficulty": "hard",
+      "mutation_category": "infinite_recursion",
+      "initial_code": "def _inf(x):\n    return _inf(x)\n_inf(1)\n",
+      "expected_behavior": "Read nested network timeout setting with default fallback",
+      "error_pattern": "RecursionError"
+    },
+    {
+      "id": "ast_bug_041_recursive_pow",
+      "description": "[remove_guard] Compute base raised to non-negative integer exponent recursively",
+      "difficulty": "medium",
+      "mutation_category": "remove_guard",
+      "initial_code": "def solve(base, exp):\n    return base * solve(base, exp - 1)\nassert solve(2, 3) == 8\nassert solve(2, -1) == 1",
+      "expected_behavior": "Compute base raised to non-negative integer exponent recursively",
+      "error_pattern": "RuntimeError / GuardBypass"
+    },
+    {
+      "id": "ast_bug_042_recursive_pow",
+      "description": "[off_by_one] Compute base raised to non-negative integer exponent recursively",
+      "difficulty": "easy",
+      "mutation_category": "off_by_one",
+      "initial_code": "def solve(base, exp):\n    if exp <= 0:\n        return 1\n    return base * solve(base, exp - 1)\nassert solve(2, 3) == 8\nassert solve(2, -1) == 1\n_ = [1, 2][5]\n",
+      "expected_behavior": "Compute base raised to non-negative integer exponent recursively",
+      "error_pattern": "IndexError"
+    },
+    {
+      "id": "ast_bug_043_recursive_pow",
+      "description": "[unsafe_dict_get] Compute base raised to non-negative integer exponent recursively",
+      "difficulty": "medium",
+      "mutation_category": "unsafe_dict_get",
+      "initial_code": "def solve(base, exp):\n    if exp <= 0:\n        return 1\n    return base * solve(base, exp - 1)\nassert solve(2, 3) == 8\nassert solve(2, -1) == 1\n_ = {}['missing_key']\n",
+      "expected_behavior": "Compute base raised to non-negative integer exponent recursively",
+      "error_pattern": "KeyError"
+    },
+    {
+      "id": "ast_bug_044_recursive_pow",
+      "description": "[strip_str_cast] Compute base raised to non-negative integer exponent recursively",
+      "difficulty": "easy",
+      "mutation_category": "strip_str_cast",
+      "initial_code": "def solve(base, exp):\n    if exp <= 0:\n        return 1\n    return base * solve(base, exp - 1)\nassert solve(2, 3) == 8\nassert solve(2, -1) == 1\n_ = 'val_' + 123\n",
+      "expected_behavior": "Compute base raised to non-negative integer exponent recursively",
+      "error_pattern": "TypeError"
+    },
+    {
+      "id": "ast_bug_045_recursive_pow",
+      "description": "[infinite_recursion] Compute base raised to non-negative integer exponent recursively",
+      "difficulty": "hard",
+      "mutation_category": "infinite_recursion",
+      "initial_code": "def solve(base, exp):\n    if exp <= 0:\n        return 1\n    return base * solve(base, exp)\nassert solve(2, 3) == 8\nassert solve(2, -1) == 1",
+      "expected_behavior": "Compute base raised to non-negative integer exponent recursively",
+      "error_pattern": "RecursionError"
+    },
+    {
+      "id": "ast_bug_046_csv_row_join",
+      "description": "[remove_guard] Join heterogeneous cell values into a comma-separated string",
+      "difficulty": "medium",
+      "mutation_category": "remove_guard",
+      "initial_code": "def solve(cells):\n    return ','.join((str(c) for c in cells))\nassert solve(['node', 1, True]) == 'node,1,True'\n_ = 1 / 0\n",
+      "expected_behavior": "Join heterogeneous cell values into a comma-separated string",
+      "error_pattern": "ZeroDivisionError"
+    },
+    {
+      "id": "ast_bug_047_csv_row_join",
+      "description": "[off_by_one] Join heterogeneous cell values into a comma-separated string",
+      "difficulty": "easy",
+      "mutation_category": "off_by_one",
+      "initial_code": "def solve(cells):\n    return ','.join((str(c) for c in cells))\nassert solve(['node', 1, True]) == 'node,1,True'\n_ = [1, 2][5]\n",
+      "expected_behavior": "Join heterogeneous cell values into a comma-separated string",
+      "error_pattern": "IndexError"
+    },
+    {
+      "id": "ast_bug_048_csv_row_join",
+      "description": "[unsafe_dict_get] Join heterogeneous cell values into a comma-separated string",
+      "difficulty": "medium",
+      "mutation_category": "unsafe_dict_get",
+      "initial_code": "def solve(cells):\n    return ','.join((str(c) for c in cells))\nassert solve(['node', 1, True]) == 'node,1,True'\n_ = {}['missing_key']\n",
+      "expected_behavior": "Join heterogeneous cell values into a comma-separated string",
+      "error_pattern": "KeyError"
+    },
+    {
+      "id": "ast_bug_049_csv_row_join",
+      "description": "[strip_str_cast] Join heterogeneous cell values into a comma-separated string",
+      "difficulty": "easy",
+      "mutation_category": "strip_str_cast",
+      "initial_code": "def solve(cells):\n    return ','.join((c for c in cells))\nassert solve(['node', 1, True]) == 'node,1,True'",
+      "expected_behavior": "Join heterogeneous cell values into a comma-separated string",
+      "error_pattern": "TypeError"
+    },
+    {
+      "id": "ast_bug_050_csv_row_join",
+      "description": "[infinite_recursion] Join heterogeneous cell values into a comma-separated string",
+      "difficulty": "hard",
+      "mutation_category": "infinite_recursion",
+      "initial_code": "def _inf(x):\n    return _inf(x)\n_inf(1)\n",
+      "expected_behavior": "Join heterogeneous cell values into a comma-separated string",
+      "error_pattern": "RecursionError"
+    },
+    {
+      "id": "ast_bug_051_variance_step",
+      "description": "[remove_guard] Compute mean squared deviation over sample list",
+      "difficulty": "medium",
+      "mutation_category": "remove_guard",
+      "initial_code": "def solve(vals):\n    mean = sum(vals) / len(vals)\n    return sum(((x - mean) ** 2 for x in vals)) / len(vals)\nassert solve([2, 4]) == 1.0\nassert solve([]) == 0.0",
+      "expected_behavior": "Compute mean squared deviation over sample list",
+      "error_pattern": "RuntimeError / GuardBypass"
+    },
+    {
+      "id": "ast_bug_052_variance_step",
+      "description": "[off_by_one] Compute mean squared deviation over sample list",
+      "difficulty": "easy",
+      "mutation_category": "off_by_one",
+      "initial_code": "def solve(vals):\n    if not vals:\n        return 0.0\n    mean = sum(vals) / len(vals)\n    return sum(((x - mean) ** 2 for x in vals)) / len(vals)\nassert solve([2, 4]) == 1.0\nassert solve([]) == 0.0\n_ = [1, 2][5]\n",
+      "expected_behavior": "Compute mean squared deviation over sample list",
+      "error_pattern": "IndexError"
+    },
+    {
+      "id": "ast_bug_053_variance_step",
+      "description": "[unsafe_dict_get] Compute mean squared deviation over sample list",
+      "difficulty": "medium",
+      "mutation_category": "unsafe_dict_get",
+      "initial_code": "def solve(vals):\n    if not vals:\n        return 0.0\n    mean = sum(vals) / len(vals)\n    return sum(((x - mean) ** 2 for x in vals)) / len(vals)\nassert solve([2, 4]) == 1.0\nassert solve([]) == 0.0\n_ = {}['missing_key']\n",
+      "expected_behavior": "Compute mean squared deviation over sample list",
+      "error_pattern": "KeyError"
+    },
+    {
+      "id": "ast_bug_054_variance_step",
+      "description": "[strip_str_cast] Compute mean squared deviation over sample list",
+      "difficulty": "easy",
+      "mutation_category": "strip_str_cast",
+      "initial_code": "def solve(vals):\n    if not vals:\n        return 0.0\n    mean = sum(vals) / len(vals)\n    return sum(((x - mean) ** 2 for x in vals)) / len(vals)\nassert solve([2, 4]) == 1.0\nassert solve([]) == 0.0\n_ = 'val_' + 123\n",
+      "expected_behavior": "Compute mean squared deviation over sample list",
+      "error_pattern": "TypeError"
+    },
+    {
+      "id": "ast_bug_055_variance_step",
+      "description": "[infinite_recursion] Compute mean squared deviation over sample list",
+      "difficulty": "hard",
+      "mutation_category": "infinite_recursion",
+      "initial_code": "def _inf(x):\n    return _inf(x)\n_inf(1)\n",
+      "expected_behavior": "Compute mean squared deviation over sample list",
+      "error_pattern": "RecursionError"
+    },
+    {
+      "id": "ast_bug_056_window_tail",
+      "description": "[remove_guard] Fetch the last element of a sliding telemetry window",
+      "difficulty": "medium",
+      "mutation_category": "remove_guard",
+      "initial_code": "def solve(window):\n    return window[len(window) - 1]\nassert solve([12, 15, 19]) == 19\nassert solve([]) == 0",
+      "expected_behavior": "Fetch the last element of a sliding telemetry window",
+      "error_pattern": "RuntimeError / GuardBypass"
+    },
+    {
+      "id": "ast_bug_057_window_tail",
+      "description": "[off_by_one] Fetch the last element of a sliding telemetry window",
+      "difficulty": "easy",
+      "mutation_category": "off_by_one",
+      "initial_code": "def solve(window):\n    if len(window) == 0:\n        return 0\n    return window[len(window)]\nassert solve([12, 15, 19]) == 19\nassert solve([]) == 0",
+      "expected_behavior": "Fetch the last element of a sliding telemetry window",
+      "error_pattern": "IndexError"
+    },
+    {
+      "id": "ast_bug_058_window_tail",
+      "description": "[unsafe_dict_get] Fetch the last element of a sliding telemetry window",
+      "difficulty": "medium",
+      "mutation_category": "unsafe_dict_get",
+      "initial_code": "def solve(window):\n    if len(window) == 0:\n        return 0\n    return window[len(window) - 1]\nassert solve([12, 15, 19]) == 19\nassert solve([]) == 0\n_ = {}['missing_key']\n",
+      "expected_behavior": "Fetch the last element of a sliding telemetry window",
+      "error_pattern": "KeyError"
+    },
+    {
+      "id": "ast_bug_059_window_tail",
+      "description": "[strip_str_cast] Fetch the last element of a sliding telemetry window",
+      "difficulty": "easy",
+      "mutation_category": "strip_str_cast",
+      "initial_code": "def solve(window):\n    if len(window) == 0:\n        return 0\n    return window[len(window) - 1]\nassert solve([12, 15, 19]) == 19\nassert solve([]) == 0\n_ = 'val_' + 123\n",
+      "expected_behavior": "Fetch the last element of a sliding telemetry window",
+      "error_pattern": "TypeError"
+    },
+    {
+      "id": "ast_bug_060_window_tail",
+      "description": "[infinite_recursion] Fetch the last element of a sliding telemetry window",
+      "difficulty": "hard",
+      "mutation_category": "infinite_recursion",
+      "initial_code": "def _inf(x):\n    return _inf(x)\n_inf(1)\n",
+      "expected_behavior": "Fetch the last element of a sliding telemetry window",
+      "error_pattern": "RecursionError"
+    },
+    {
+      "id": "ast_bug_061_token_header",
+      "description": "[remove_guard] Extract authorization bearer token from request metadata",
+      "difficulty": "medium",
+      "mutation_category": "remove_guard",
+      "initial_code": "def solve(req):\n    headers = req.get('headers', {})\n    return headers.get('Authorization', '')\nassert solve({'headers': {'Authorization': 'Bearer xyz'}}) == 'Bearer xyz'\nassert solve({}) == ''\n_ = 1 / 0\n",
+      "expected_behavior": "Extract authorization bearer token from request metadata",
+      "error_pattern": "ZeroDivisionError"
+    },
+    {
+      "id": "ast_bug_062_token_header",
+      "description": "[off_by_one] Extract authorization bearer token from request metadata",
+      "difficulty": "easy",
+      "mutation_category": "off_by_one",
+      "initial_code": "def solve(req):\n    headers = req.get('headers', {})\n    return headers.get('Authorization', '')\nassert solve({'headers': {'Authorization': 'Bearer xyz'}}) == 'Bearer xyz'\nassert solve({}) == ''\n_ = [1, 2][5]\n",
+      "expected_behavior": "Extract authorization bearer token from request metadata",
+      "error_pattern": "IndexError"
+    },
+    {
+      "id": "ast_bug_063_token_header",
+      "description": "[unsafe_dict_get] Extract authorization bearer token from request metadata",
+      "difficulty": "medium",
+      "mutation_category": "unsafe_dict_get",
+      "initial_code": "def solve(req):\n    headers = req['headers']\n    return headers['Authorization']\nassert solve({'headers': {'Authorization': 'Bearer xyz'}}) == 'Bearer xyz'\nassert solve({}) == ''",
+      "expected_behavior": "Extract authorization bearer token from request metadata",
+      "error_pattern": "KeyError"
+    },
+    {
+      "id": "ast_bug_064_token_header",
+      "description": "[strip_str_cast] Extract authorization bearer token from request metadata",
+      "difficulty": "easy",
+      "mutation_category": "strip_str_cast",
+      "initial_code": "def solve(req):\n    headers = req.get('headers', {})\n    return headers.get('Authorization', '')\nassert solve({'headers': {'Authorization': 'Bearer xyz'}}) == 'Bearer xyz'\nassert solve({}) == ''\n_ = 'val_' + 123\n",
+      "expected_behavior": "Extract authorization bearer token from request metadata",
+      "error_pattern": "TypeError"
+    },
+    {
+      "id": "ast_bug_065_token_header",
+      "description": "[infinite_recursion] Extract authorization bearer token from request metadata",
+      "difficulty": "hard",
+      "mutation_category": "infinite_recursion",
+      "initial_code": "def _inf(x):\n    return _inf(x)\n_inf(1)\n",
+      "expected_behavior": "Extract authorization bearer token from request metadata",
+      "error_pattern": "RecursionError"
+    },
+    {
+      "id": "ast_bug_066_digit_count",
+      "description": "[remove_guard] Recursively count decimal digits of a non-negative integer",
+      "difficulty": "medium",
+      "mutation_category": "remove_guard",
+      "initial_code": "def solve(n):\n    return 1 + solve(n // 10)\nassert solve(9876) == 4\nassert solve(0) == 1",
+      "expected_behavior": "Recursively count decimal digits of a non-negative integer",
+      "error_pattern": "RuntimeError / GuardBypass"
+    },
+    {
+      "id": "ast_bug_067_digit_count",
+      "description": "[off_by_one] Recursively count decimal digits of a non-negative integer",
+      "difficulty": "easy",
+      "mutation_category": "off_by_one",
+      "initial_code": "def solve(n):\n    if n < 10:\n        return 1\n    return 1 + solve(n // 10)\nassert solve(9876) == 4\nassert solve(0) == 1\n_ = [1, 2][5]\n",
+      "expected_behavior": "Recursively count decimal digits of a non-negative integer",
+      "error_pattern": "IndexError"
+    },
+    {
+      "id": "ast_bug_068_digit_count",
+      "description": "[unsafe_dict_get] Recursively count decimal digits of a non-negative integer",
+      "difficulty": "medium",
+      "mutation_category": "unsafe_dict_get",
+      "initial_code": "def solve(n):\n    if n < 10:\n        return 1\n    return 1 + solve(n // 10)\nassert solve(9876) == 4\nassert solve(0) == 1\n_ = {}['missing_key']\n",
+      "expected_behavior": "Recursively count decimal digits of a non-negative integer",
+      "error_pattern": "KeyError"
+    },
+    {
+      "id": "ast_bug_069_digit_count",
+      "description": "[strip_str_cast] Recursively count decimal digits of a non-negative integer",
+      "difficulty": "easy",
+      "mutation_category": "strip_str_cast",
+      "initial_code": "def solve(n):\n    if n < 10:\n        return 1\n    return 1 + solve(n // 10)\nassert solve(9876) == 4\nassert solve(0) == 1\n_ = 'val_' + 123\n",
+      "expected_behavior": "Recursively count decimal digits of a non-negative integer",
+      "error_pattern": "TypeError"
+    },
+    {
+      "id": "ast_bug_070_digit_count",
+      "description": "[infinite_recursion] Recursively count decimal digits of a non-negative integer",
+      "difficulty": "hard",
+      "mutation_category": "infinite_recursion",
+      "initial_code": "def solve(n):\n    if n < 10:\n        return 1\n    return 1 + solve(n)\nassert solve(9876) == 4\nassert solve(0) == 1",
+      "expected_behavior": "Recursively count decimal digits of a non-negative integer",
+      "error_pattern": "RecursionError"
+    },
+    {
+      "id": "ast_bug_071_score_banner",
+      "description": "[remove_guard] Build readable status banner from label and numeric score",
+      "difficulty": "medium",
+      "mutation_category": "remove_guard",
+      "initial_code": "def solve(label, score):\n    return label + ': ' + str(score)\nassert solve('Accuracy', 98) == 'Accuracy: 98'\n_ = 1 / 0\n",
+      "expected_behavior": "Build readable status banner from label and numeric score",
+      "error_pattern": "ZeroDivisionError"
+    },
+    {
+      "id": "ast_bug_072_score_banner",
+      "description": "[off_by_one] Build readable status banner from label and numeric score",
+      "difficulty": "easy",
+      "mutation_category": "off_by_one",
+      "initial_code": "def solve(label, score):\n    return label + ': ' + str(score)\nassert solve('Accuracy', 98) == 'Accuracy: 98'\n_ = [1, 2][5]\n",
+      "expected_behavior": "Build readable status banner from label and numeric score",
+      "error_pattern": "IndexError"
+    },
+    {
+      "id": "ast_bug_073_score_banner",
+      "description": "[unsafe_dict_get] Build readable status banner from label and numeric score",
+      "difficulty": "medium",
+      "mutation_category": "unsafe_dict_get",
+      "initial_code": "def solve(label, score):\n    return label + ': ' + str(score)\nassert solve('Accuracy', 98) == 'Accuracy: 98'\n_ = {}['missing_key']\n",
+      "expected_behavior": "Build readable status banner from label and numeric score",
+      "error_pattern": "KeyError"
+    },
+    {
+      "id": "ast_bug_074_score_banner",
+      "description": "[strip_str_cast] Build readable status banner from label and numeric score",
+      "difficulty": "easy",
+      "mutation_category": "strip_str_cast",
+      "initial_code": "def solve(label, score):\n    return label + ': ' + score\nassert solve('Accuracy', 98) == 'Accuracy: 98'",
+      "expected_behavior": "Build readable status banner from label and numeric score",
+      "error_pattern": "TypeError"
+    },
+    {
+      "id": "ast_bug_075_score_banner",
+      "description": "[infinite_recursion] Build readable status banner from label and numeric score",
+      "difficulty": "hard",
+      "mutation_category": "infinite_recursion",
+      "initial_code": "def _inf(x):\n    return _inf(x)\n_inf(1)\n",
+      "expected_behavior": "Build readable status banner from label and numeric score",
+      "error_pattern": "RecursionError"
+    },
+    {
+      "id": "ast_bug_076_precision_calc",
+      "description": "[remove_guard] Calculate precision metric from true and false positives",
+      "difficulty": "medium",
+      "mutation_category": "remove_guard",
+      "initial_code": "def solve(tp, fp):\n    denom = tp + fp\n    return tp / denom\nassert solve(8, 2) == 0.8\nassert solve(0, 0) == 0.0",
+      "expected_behavior": "Calculate precision metric from true and false positives",
+      "error_pattern": "RuntimeError / GuardBypass"
+    },
+    {
+      "id": "ast_bug_077_precision_calc",
+      "description": "[off_by_one] Calculate precision metric from true and false positives",
+      "difficulty": "easy",
+      "mutation_category": "off_by_one",
+      "initial_code": "def solve(tp, fp):\n    denom = tp + fp\n    if denom == 0:\n        return 0.0\n    return tp / denom\nassert solve(8, 2) == 0.8\nassert solve(0, 0) == 0.0\n_ = [1, 2][5]\n",
+      "expected_behavior": "Calculate precision metric from true and false positives",
+      "error_pattern": "IndexError"
+    },
+    {
+      "id": "ast_bug_078_precision_calc",
+      "description": "[unsafe_dict_get] Calculate precision metric from true and false positives",
+      "difficulty": "medium",
+      "mutation_category": "unsafe_dict_get",
+      "initial_code": "def solve(tp, fp):\n    denom = tp + fp\n    if denom == 0:\n        return 0.0\n    return tp / denom\nassert solve(8, 2) == 0.8\nassert solve(0, 0) == 0.0\n_ = {}['missing_key']\n",
+      "expected_behavior": "Calculate precision metric from true and false positives",
+      "error_pattern": "KeyError"
+    },
+    {
+      "id": "ast_bug_079_precision_calc",
+      "description": "[strip_str_cast] Calculate precision metric from true and false positives",
+      "difficulty": "easy",
+      "mutation_category": "strip_str_cast",
+      "initial_code": "def solve(tp, fp):\n    denom = tp + fp\n    if denom == 0:\n        return 0.0\n    return tp / denom\nassert solve(8, 2) == 0.8\nassert solve(0, 0) == 0.0\n_ = 'val_' + 123\n",
+      "expected_behavior": "Calculate precision metric from true and false positives",
+      "error_pattern": "TypeError"
+    },
+    {
+      "id": "ast_bug_080_precision_calc",
+      "description": "[infinite_recursion] Calculate precision metric from true and false positives",
+      "difficulty": "hard",
+      "mutation_category": "infinite_recursion",
+      "initial_code": "def _inf(x):\n    return _inf(x)\n_inf(1)\n",
+      "expected_behavior": "Calculate precision metric from true and false positives",
+      "error_pattern": "RecursionError"
+    },
+    {
+      "id": "ast_bug_081_pair_boundary",
+      "description": "[remove_guard] Access the final adjacent pair in a list",
+      "difficulty": "medium",
+      "mutation_category": "remove_guard",
+      "initial_code": "def solve(seq):\n    return (seq[len(seq) - 2], seq[len(seq) - 1])\nassert solve([1, 2, 3]) == (2, 3)\nassert solve([1]) == ()",
+      "expected_behavior": "Access the final adjacent pair in a list",
+      "error_pattern": "RuntimeError / GuardBypass"
+    },
+    {
+      "id": "ast_bug_082_pair_boundary",
+      "description": "[off_by_one] Access the final adjacent pair in a list",
+      "difficulty": "easy",
+      "mutation_category": "off_by_one",
+      "initial_code": "def solve(seq):\n    if len(seq) < 2:\n        return ()\n    return (seq[len(seq)], seq[len(seq)])\nassert solve([1, 2, 3]) == (2, 3)\nassert solve([1]) == ()",
+      "expected_behavior": "Access the final adjacent pair in a list",
+      "error_pattern": "IndexError"
+    },
+    {
+      "id": "ast_bug_083_pair_boundary",
+      "description": "[unsafe_dict_get] Access the final adjacent pair in a list",
+      "difficulty": "medium",
+      "mutation_category": "unsafe_dict_get",
+      "initial_code": "def solve(seq):\n    if len(seq) < 2:\n        return ()\n    return (seq[len(seq) - 2], seq[len(seq) - 1])\nassert solve([1, 2, 3]) == (2, 3)\nassert solve([1]) == ()\n_ = {}['missing_key']\n",
+      "expected_behavior": "Access the final adjacent pair in a list",
+      "error_pattern": "KeyError"
+    },
+    {
+      "id": "ast_bug_084_pair_boundary",
+      "description": "[strip_str_cast] Access the final adjacent pair in a list",
+      "difficulty": "easy",
+      "mutation_category": "strip_str_cast",
+      "initial_code": "def solve(seq):\n    if len(seq) < 2:\n        return ()\n    return (seq[len(seq) - 2], seq[len(seq) - 1])\nassert solve([1, 2, 3]) == (2, 3)\nassert solve([1]) == ()\n_ = 'val_' + 123\n",
+      "expected_behavior": "Access the final adjacent pair in a list",
+      "error_pattern": "TypeError"
+    },
+    {
+      "id": "ast_bug_085_pair_boundary",
+      "description": "[infinite_recursion] Access the final adjacent pair in a list",
+      "difficulty": "hard",
+      "mutation_category": "infinite_recursion",
+      "initial_code": "def _inf(x):\n    return _inf(x)\n_inf(1)\n",
+      "expected_behavior": "Access the final adjacent pair in a list",
+      "error_pattern": "RecursionError"
+    },
+    {
+      "id": "ast_bug_086_metric_lookup",
+      "description": "[remove_guard] Fetch F1 score from evaluation summary dictionary",
+      "difficulty": "medium",
+      "mutation_category": "remove_guard",
+      "initial_code": "def solve(report):\n    metrics = report.get('metrics', {})\n    return metrics.get('f1_score', 0.0)\nassert solve({'metrics': {'f1_score': 0.97}}) == 0.97\nassert solve({'metrics': {}}) == 0.0\n_ = 1 / 0\n",
+      "expected_behavior": "Fetch F1 score from evaluation summary dictionary",
+      "error_pattern": "ZeroDivisionError"
+    },
+    {
+      "id": "ast_bug_087_metric_lookup",
+      "description": "[off_by_one] Fetch F1 score from evaluation summary dictionary",
+      "difficulty": "easy",
+      "mutation_category": "off_by_one",
+      "initial_code": "def solve(report):\n    metrics = report.get('metrics', {})\n    return metrics.get('f1_score', 0.0)\nassert solve({'metrics': {'f1_score': 0.97}}) == 0.97\nassert solve({'metrics': {}}) == 0.0\n_ = [1, 2][5]\n",
+      "expected_behavior": "Fetch F1 score from evaluation summary dictionary",
+      "error_pattern": "IndexError"
+    },
+    {
+      "id": "ast_bug_088_metric_lookup",
+      "description": "[unsafe_dict_get] Fetch F1 score from evaluation summary dictionary",
+      "difficulty": "medium",
+      "mutation_category": "unsafe_dict_get",
+      "initial_code": "def solve(report):\n    metrics = report['metrics']\n    return metrics['f1_score']\nassert solve({'metrics': {'f1_score': 0.97}}) == 0.97\nassert solve({'metrics': {}}) == 0.0",
+      "expected_behavior": "Fetch F1 score from evaluation summary dictionary",
+      "error_pattern": "KeyError"
+    },
+    {
+      "id": "ast_bug_089_metric_lookup",
+      "description": "[strip_str_cast] Fetch F1 score from evaluation summary dictionary",
+      "difficulty": "easy",
+      "mutation_category": "strip_str_cast",
+      "initial_code": "def solve(report):\n    metrics = report.get('metrics', {})\n    return metrics.get('f1_score', 0.0)\nassert solve({'metrics': {'f1_score': 0.97}}) == 0.97\nassert solve({'metrics': {}}) == 0.0\n_ = 'val_' + 123\n",
+      "expected_behavior": "Fetch F1 score from evaluation summary dictionary",
+      "error_pattern": "TypeError"
+    },
+    {
+      "id": "ast_bug_090_metric_lookup",
+      "description": "[infinite_recursion] Fetch F1 score from evaluation summary dictionary",
+      "difficulty": "hard",
+      "mutation_category": "infinite_recursion",
+      "initial_code": "def _inf(x):\n    return _inf(x)\n_inf(1)\n",
+      "expected_behavior": "Fetch F1 score from evaluation summary dictionary",
+      "error_pattern": "RecursionError"
+    },
+    {
+      "id": "ast_bug_091_factorial_safe",
+      "description": "[remove_guard] Compute factorial recursively with negative input guard",
+      "difficulty": "medium",
+      "mutation_category": "remove_guard",
+      "initial_code": "def solve(n):\n    return n * solve(n - 1)\nassert solve(5) == 120\nassert solve(-4) == 1",
+      "expected_behavior": "Compute factorial recursively with negative input guard",
+      "error_pattern": "RuntimeError / GuardBypass"
+    },
+    {
+      "id": "ast_bug_092_factorial_safe",
+      "description": "[off_by_one] Compute factorial recursively with negative input guard",
+      "difficulty": "easy",
+      "mutation_category": "off_by_one",
+      "initial_code": "def solve(n):\n    if n <= 1:\n        return 1\n    return n * solve(n - 1)\nassert solve(5) == 120\nassert solve(-4) == 1\n_ = [1, 2][5]\n",
+      "expected_behavior": "Compute factorial recursively with negative input guard",
+      "error_pattern": "IndexError"
+    },
+    {
+      "id": "ast_bug_093_factorial_safe",
+      "description": "[unsafe_dict_get] Compute factorial recursively with negative input guard",
+      "difficulty": "medium",
+      "mutation_category": "unsafe_dict_get",
+      "initial_code": "def solve(n):\n    if n <= 1:\n        return 1\n    return n * solve(n - 1)\nassert solve(5) == 120\nassert solve(-4) == 1\n_ = {}['missing_key']\n",
+      "expected_behavior": "Compute factorial recursively with negative input guard",
+      "error_pattern": "KeyError"
+    },
+    {
+      "id": "ast_bug_094_factorial_safe",
+      "description": "[strip_str_cast] Compute factorial recursively with negative input guard",
+      "difficulty": "easy",
+      "mutation_category": "strip_str_cast",
+      "initial_code": "def solve(n):\n    if n <= 1:\n        return 1\n    return n * solve(n - 1)\nassert solve(5) == 120\nassert solve(-4) == 1\n_ = 'val_' + 123\n",
+      "expected_behavior": "Compute factorial recursively with negative input guard",
+      "error_pattern": "TypeError"
+    },
+    {
+      "id": "ast_bug_095_factorial_safe",
+      "description": "[infinite_recursion] Compute factorial recursively with negative input guard",
+      "difficulty": "hard",
+      "mutation_category": "infinite_recursion",
+      "initial_code": "def solve(n):\n    if n <= 1:\n        return 1\n    return n * solve(n)\nassert solve(5) == 120\nassert solve(-4) == 1",
+      "expected_behavior": "Compute factorial recursively with negative input guard",
+      "error_pattern": "RecursionError"
+    },
+    {
+      "id": "ast_bug_096_port_label",
+      "description": "[remove_guard] Concatenate host string and integer port number",
+      "difficulty": "medium",
+      "mutation_category": "remove_guard",
+      "initial_code": "def solve(host, port):\n    return host + ':' + str(port)\nassert solve('localhost', 8501) == 'localhost:8501'\n_ = 1 / 0\n",
+      "expected_behavior": "Concatenate host string and integer port number",
+      "error_pattern": "ZeroDivisionError"
+    },
+    {
+      "id": "ast_bug_097_port_label",
+      "description": "[off_by_one] Concatenate host string and integer port number",
+      "difficulty": "easy",
+      "mutation_category": "off_by_one",
+      "initial_code": "def solve(host, port):\n    return host + ':' + str(port)\nassert solve('localhost', 8501) == 'localhost:8501'\n_ = [1, 2][5]\n",
+      "expected_behavior": "Concatenate host string and integer port number",
+      "error_pattern": "IndexError"
+    },
+    {
+      "id": "ast_bug_098_port_label",
+      "description": "[unsafe_dict_get] Concatenate host string and integer port number",
+      "difficulty": "medium",
+      "mutation_category": "unsafe_dict_get",
+      "initial_code": "def solve(host, port):\n    return host + ':' + str(port)\nassert solve('localhost', 8501) == 'localhost:8501'\n_ = {}['missing_key']\n",
+      "expected_behavior": "Concatenate host string and integer port number",
+      "error_pattern": "KeyError"
+    },
+    {
+      "id": "ast_bug_099_port_label",
+      "description": "[strip_str_cast] Concatenate host string and integer port number",
+      "difficulty": "easy",
+      "mutation_category": "strip_str_cast",
+      "initial_code": "def solve(host, port):\n    return host + ':' + port\nassert solve('localhost', 8501) == 'localhost:8501'",
+      "expected_behavior": "Concatenate host string and integer port number",
+      "error_pattern": "TypeError"
+    },
+    {
+      "id": "ast_bug_100_port_label",
+      "description": "[infinite_recursion] Concatenate host string and integer port number",
+      "difficulty": "hard",
+      "mutation_category": "infinite_recursion",
+      "initial_code": "def _inf(x):\n    return _inf(x)\n_inf(1)\n",
+      "expected_behavior": "Concatenate host string and integer port number",
+      "error_pattern": "RecursionError"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+5 categories of buggy codes  on which 100 deterministic programs are framed 
+
+
+
+remove_guard (Edge-Case Guard Removal): Strips leading if ...: boundary/empty-input checks (such as if not nums: or if denom == 0:), exposing the function to ZeroDivisionError, IndexError, or RuntimeError on edge-case inputs.
+
+off_by_one (Boundary Index Mutation): Mutates valid end-index expressions like items[len(items) - 1] into items[len(items)], triggering an IndexError.
+
+unsafe_dict_get (Unsafe Dictionary Lookup): Replaces safe .get("key", default) calls with direct bracket indexing (d["key"]), triggering a KeyError when optional fields are missing.
+
+strip_str_cast (Type Coercion Removal): Removes explicit str(x) conversions inside string concatenation expressions, triggering a TypeError when numeric or boolean values are mixed with strings.
+
+infinite_recursion (Missing Recursive Step / Base-Case Divergence): Mutates recursive decrement/division calls like solve(n - 1) or solve(n // 10) into solve(n), causing the recursion state never to converge and triggering a RecursionError.

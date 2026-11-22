@@ -1,0 +1,102 @@
+{
+  "test_tasks": [
+    {
+      "id": "syntax_error_1",
+      "name": "Python Syntax Error Recovery",
+      "description": "Agent encounters syntax error and must recover",
+      "task": "Fix the syntax error in the following code: print('Hello World'",
+      "expected_outcome": "Code executes successfully",
+      "error_type": "syntax",
+      "difficulty": "easy"
+    },
+    {
+      "id": "api_failure_1",
+      "name": "API Endpoint Failure",
+      "description": "Agent handles API endpoint failure with retry logic",
+      "task": "Call the API endpoint https://api.example.com/data and handle failures",
+      "expected_outcome": "Data retrieved or graceful failure handling",
+      "error_type": "api",
+      "difficulty": "medium"
+    },
+    {
+      "id": "logical_error_1",
+      "name": "Logical Error in Loop",
+      "description": "Agent detects and fixes infinite loop",
+      "task": "Debug and fix the infinite loop in the provided code",
+      "expected_outcome": "Loop terminates correctly",
+      "error_type": "logical",
+      "difficulty": "medium"
+    },
+    {
+      "id": "context_drift_1",
+      "name": "Context Drift Prevention",
+      "description": "Agent maintains context across multiple operations",
+      "task": "Perform a series of data transformations while maintaining state",
+      "expected_outcome": "All transformations completed with correct state",
+      "error_type": "context",
+      "difficulty": "hard"
+    },
+    {
+      "id": "error_loop_1",
+      "name": "Error Loop Detection",
+      "description": "Agent detects and breaks repeating error patterns",
+      "task": "Execute a task that triggers repeated failures, break the loop",
+      "expected_outcome": "Agent breaks loop and completes task",
+      "error_type": "loop",
+      "difficulty": "hard"
+    },
+    {
+      "id": "dependency_error_1",
+      "name": "Missing Dependency Error",
+      "description": "Agent handles missing import/dependency errors",
+      "task": "Run code that uses non-existent module, handle gracefully",
+      "expected_outcome": "Error handled or dependency resolved",
+      "error_type": "runtime",
+      "difficulty": "medium"
+    },
+    {
+      "id": "type_error_1",
+      "name": "Type Mismatch Error",
+      "description": "Agent resolves type compatibility issues",
+      "task": "Process data with type mismatches, resolve errors",
+      "expected_outcome": "Type errors resolved",
+      "error_type": "runtime",
+      "difficulty": "easy"
+    },
+    {
+      "id": "timeout_error_1",
+      "name": "Operation Timeout",
+      "description": "Agent handles timeout scenarios",
+      "task": "Execute long-running operation with timeout handling",
+      "expected_outcome": "Timeout handled gracefully",
+      "error_type": "timeout",
+      "difficulty": "medium"
+    },
+    {
+      "id": "memory_error_1",
+      "name": "Memory Management Error",
+      "description": "Agent handles memory exhaustion scenarios",
+      "task": "Process large dataset with memory constraints",
+      "expected_outcome": "Memory managed efficiently",
+      "error_type": "resource",
+      "difficulty": "hard"
+    },
+    {
+      "id": "complex_recovery_1",
+      "name": "Complex Multi-Step Recovery",
+      "description": "Agent performs complex recovery requiring multiple steps",
+      "task": "Recover from cascading failures in a multi-component system",
+      "expected_outcome": "System recovered to stable state",
+      "error_type": "complex",
+      "difficulty": "hard"
+    }
+  ],
+  "evaluation_metrics": {
+    "token_usage": "Total tokens consumed during execution",
+    "cycles": "Number of reasoning-acting cycles",
+    "recovery_rate": "Percentage of errors successfully recovered",
+    "context_drift_score": "Measure of context stability",
+    "error_loop_prevention": "Success in preventing error loops",
+    "time_to_completion": "Total execution time"
+  }
+}

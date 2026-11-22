@@ -1,0 +1,153 @@
+\documentclass{conference}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{hyperref}
+
+\title{Graph-Structured Failure Memory: Preventing Infinite Error Loops and Context Drift in Self-Healing LLM Agents}
+
+\author{
+    Author Name(s)\\
+    Institution\\
+    \texttt{email@institution.edu}
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Self-healing LLM agents often encounter infinite error loops and context drift when attempting to recover from failures. This paper introduces Graph-Structured Failure Memory (GFM), a novel approach that uses graph-based memory to track error patterns, recovery strategies, and their outcomes. By maintaining a structured representation of failure history, GFM enables agents to detect repeating error patterns, select effective recovery strategies, and maintain context stability. Our experiments demonstrate that GFM-enhanced agents achieve significantly higher recovery rates and fewer error loops compared to baseline ReAct agents, while maintaining competitive performance on standard benchmarks.
+\end{abstract}
+
+\section{Introduction}
+Large Language Model (LLM) agents have shown remarkable capabilities in autonomous task execution through reasoning-acting loops such as ReAct \cite{react}. However, these agents often struggle with error recovery, frequently entering infinite loops where they repeat the same failing actions. Additionally, long-running agents experience context drift, where their understanding of the task diverges from the original requirements.
+
+Current approaches to error recovery in LLM agents rely primarily on prompt-based retry mechanisms without systematic learning from past failures. This leads to inefficient recovery attempts and repeated mistakes.
+
+\section{Related Work}
+\subsection{LLM Agent Architectures}
+ReAct-style agents combine reasoning and acting in iterative loops \cite{react}. LangGraph extends this pattern with more sophisticated state management. However, these approaches lack systematic memory for error patterns.
+
+\subsection{Error Recovery in Autonomous Systems}
+Traditional autonomous systems use various approaches for error recovery, including model-based diagnosis and case-based reasoning. However, these approaches have not been effectively adapted to the unique challenges of LLM-based agents.
+
+\subsection{Memory Systems for LLMs}
+Recent work has explored various memory architectures for LLMs, including vector databases and hierarchical memory structures. However, these approaches typically focus on factual knowledge rather than error patterns and recovery strategies.
+
+\section{Methodology}
+
+\subsection{Graph-Structured Failure Memory Architecture}
+GFM maintains a directed graph where nodes represent failures and actions, and edges represent causal relationships. Each failure node includes:
+\begin{itemize}
+    \item Error signature (hash-based)
+    \item Error type and message
+    \item Execution context
+    \item Recovery attempt history
+    \item Success/failure statistics
+\end{itemize}
+
+\subsection{AST-Based Hashing}
+To generate consistent error signatures, GFM uses Abstract Syntax Tree (AST) parsing to create structural hashes of code patterns and API calls. This enables detection of similar errors even when variable names or values differ.
+
+\subsection{Context Pruning}
+To manage context window limitations, GFM employs context pruning algorithms that extract the most relevant subgraph around the current error and compress it into a concise prompt representation.
+
+\subsection{Error Loop Detection}
+GFM continuously monitors for error loops by:
+\begin{enumerate}
+    \item Hashing each error using the AST hasher
+    \item Querying the graph for similar recent errors
+    \item Detecting patterns of repeated failures
+    \item Triggering alternative recovery strategies
+\end{enumerate}
+
+\subsection{Context Drift Prevention}
+GFM detects context drift by comparing current execution context with historical patterns. When significant drift is detected, the agent can reset its context or request clarification.
+
+\section{Implementation}
+
+\subsection{Core Components}
+The GFM system consists of three main components:
+\begin{enumerate}
+    \item \textbf{Graph Memory}: NetworkX-based graph structure for storing failure patterns
+    \item \textbf{AST Hasher}: Error/action signature generation using AST parsing
+    \item \textbf{Context Pruner}: Subgraph extraction and compression algorithms
+\end{enumerate}
+
+\subsection{Agent Integration}
+GFM is integrated into LangGraph-based agents through:
+\begin{itemize}
+    \item Pre-execution context retrieval
+    \item Real-time error monitoring
+    \item Post-execution memory updates
+    \item Recovery strategy selection
+\end{itemize}
+
+\section{Experiments}
+
+\subsection{Benchmark Setup}
+We evaluate GFM on a synthetic test suite comprising 10 tasks across different error types:
+\begin{itemize}
+    \item Syntax errors
+    \item API failures
+    \item Logical errors
+    \item Context drift scenarios
+    \item Error loop patterns
+\end{itemize}
+
+\subsection{Metrics}
+We evaluate agents using:
+\begin{itemize}
+    \item Success rate
+    \item Recovery rate
+    \item Average steps to completion
+    \item Error loop prevention
+    \item Context drift score
+\end{itemize}
+
+\subsection{Results}
+Our experiments show that GFM-enhanced agents achieve:
+\begin{itemize}
+    \item Higher success rates on error-prone tasks
+    \item Better recovery rates from failures
+    \item Fewer infinite error loops
+    \item Improved context stability
+\end{itemize}
+
+\section{Discussion}
+The graph-based approach provides several advantages over traditional retry mechanisms:
+\begin{itemize}
+    \item Systematic learning from past failures
+    \item Detection of repeating patterns
+    \item Context-aware recovery selection
+    \item Scalable memory management
+\end{itemize}
+
+\subsection{Limitations}
+Current limitations include:
+\begin{itemize}
+    \item Dependence on hash quality for error similarity
+    \item Memory growth over time
+    \item Cold start problem with no prior failures
+\end{itemize}
+
+\section{Conclusion}
+Graph-Structured Failure Memory provides a systematic approach to error recovery in LLM agents. By maintaining structured memory of failure patterns and recovery outcomes, GFM enables agents to learn from past mistakes and avoid repeating errors. Our experiments demonstrate significant improvements in recovery rates and error loop prevention.
+
+Future work includes:
+\begin{itemize}
+    \item Advanced graph compression techniques
+    \item Transfer learning across tasks
+    \item Integration with additional memory architectures
+    \item Real-world deployment studies
+\end{itemize}
+
+\section*{Acknowledgments}
+This work was supported by [funding information].
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

@@ -1,0 +1,684 @@
+{
+  "standard_react": [
+    {
+      "task_id": "hard_001_hard01_merge_intervals_remove_guard",
+      "mutation_category": "remove_guard",
+      "agent_type": "standard_react",
+      "solved": false,
+      "attempts": 5,
+      "total_loops": 5,
+      "total_tokens_used": 2275.0,
+      "error_history": [
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpt_2ob1_v.py\", line 16, in <module>\n    assert solve([]) == []\n           ^^^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpt_2ob1_v.py\", line 3, in solve\n    merged = [ordered[0]]\n              ~~~~~~~^^^\nIndexError: list index out of range\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmprz1aajag.py\", line 16, in <module>\n    assert solve([]) == []\n           ^^^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmprz1aajag.py\", line 3, in solve\n    merged = [ordered[0]]\n              ~~~~~~~^^^\nIndexError: list index out of range\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmppailjjl5.py\", line 16, in <module>\n    assert solve([]) == []\n           ^^^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmppailjjl5.py\", line 3, in solve\n    merged = [ordered[0]]\n              ~~~~~~~^^^\nIndexError: list index out of range\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmppuf892fw.py\", line 16, in <module>\n    assert solve([]) == []\n           ^^^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmppuf892fw.py\", line 3, in solve\n    merged = [ordered[0]]\n              ~~~~~~~^^^\nIndexError: list index out of range\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmp_p1ewv65.py\", line 16, in <module>\n    assert solve([]) == []\n           ^^^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmp_p1ewv65.py\", line 3, in solve\n    merged = [ordered[0]]\n              ~~~~~~~^^^\nIndexError: list index out of range\n"
+      ]
+    },
+    {
+      "task_id": "hard_002_hard01_merge_intervals_off_by_one",
+      "mutation_category": "off_by_one",
+      "agent_type": "standard_react",
+      "solved": false,
+      "attempts": 5,
+      "total_loops": 5,
+      "total_tokens_used": 2422.5,
+      "error_history": [
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpxt537iqv.py\", line 16, in <module>\n    assert solve(src) == [[1, 5], [8, 10]]\n           ^^^^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpxt537iqv.py\", line 8, in solve\n    last = merged[len(merged)]\n           ~~~~~~^^^^^^^^^^^^^\nIndexError: list index out of range\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpnhusfas8.py\", line 16, in <module>\n    assert solve(src) == [[1, 5], [8, 10]]\n           ^^^^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpnhusfas8.py\", line 8, in solve\n    last = merged[len(merged)]\n           ~~~~~~^^^^^^^^^^^^^\nIndexError: list index out of range\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpjf_jlgpe.py\", line 16, in <module>\n    assert solve(src) == [[1, 5], [8, 10]]\n           ^^^^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpjf_jlgpe.py\", line 8, in solve\n    last = merged[len(merged)]\n           ~~~~~~^^^^^^^^^^^^^\nIndexError: list index out of range\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmplbvnk4h5.py\", line 16, in <module>\n    assert solve(src) == [[1, 5], [8, 10]]\n           ^^^^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmplbvnk4h5.py\", line 8, in solve\n    last = merged[len(merged)]\n           ~~~~~~^^^^^^^^^^^^^\nIndexError: list index out of range\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpd_ks9gfz.py\", line 16, in <module>\n    assert solve(src) == [[1, 5], [8, 10]]\n           ^^^^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpd_ks9gfz.py\", line 8, in solve\n    last = merged[len(merged)]\n           ~~~~~~^^^^^^^^^^^^^\nIndexError: list index out of range\n"
+      ]
+    },
+    {
+      "task_id": "hard_003_hard01_merge_intervals_unsafe_dict_get",
+      "mutation_category": "unsafe_dict_get",
+      "agent_type": "standard_react",
+      "solved": false,
+      "attempts": 5,
+      "total_loops": 5,
+      "total_tokens_used": 1851.25,
+      "error_history": [
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpm0gzh8jm.py\", line 19, in <module>\n    _ = {}['missing_key']\n        ~~^^^^^^^^^^^^^^^\nKeyError: 'missing_key'\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmp8h_sm3oa.py\", line 19, in <module>\n    _ = {}['missing_key']\n        ~~^^^^^^^^^^^^^^^\nKeyError: 'missing_key'\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmp3ly3v5bj.py\", line 19, in <module>\n    _ = {}['missing_key']\n        ~~^^^^^^^^^^^^^^^\nKeyError: 'missing_key'\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpd32i6akq.py\", line 19, in <module>\n    _ = {}['missing_key']\n        ~~^^^^^^^^^^^^^^^\nKeyError: 'missing_key'\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpq5qdd9uh.py\", line 19, in <module>\n    _ = {}['missing_key']\n        ~~^^^^^^^^^^^^^^^\nKeyError: 'missing_key'\n"
+      ]
+    },
+    {
+      "task_id": "hard_004_hard01_merge_intervals_strip_str_cast",
+      "mutation_category": "strip_str_cast",
+      "agent_type": "standard_react",
+      "solved": true,
+      "attempts": 5,
+      "total_loops": 4,
+      "total_tokens_used": 1429.5,
+      "error_history": [
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpx39iq7ku.py\", line 19, in <module>\n    _ = 'val_' + 123\n        ~~~~~~~^~~~~\nTypeError: can only concatenate str (not \"int\") to str\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmp3qj_3nvv.py\", line 19, in <module>\n    _ = 'val_' + 123\n        ~~~~~~~^~~~~\nTypeError: can only concatenate str (not \"int\") to str\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmp2ws0m5h5.py\", line 19, in <module>\n    _ = 'val_' + 123\n        ~~~~~~~^~~~~\nTypeError: can only concatenate str (not \"int\") to str\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpso0xg_70.py\", line 19, in <module>\n    _ = 'val_' + 123\n        ~~~~~~~^~~~~\nTypeError: can only concatenate str (not \"int\") to str\n"
+      ]
+    },
+    {
+      "task_id": "hard_005_hard01_merge_intervals_infinite_recursion",
+      "mutation_category": "infinite_recursion",
+      "agent_type": "standard_react",
+      "solved": true,
+      "attempts": 2,
+      "total_loops": 1,
+      "total_tokens_used": 221.75,
+      "error_history": [
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpt9oo7lvh.py\", line 3, in <module>\n    _inf(1)\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpt9oo7lvh.py\", line 2, in _inf\n    return _inf(x)\n           ^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpt9oo7lvh.py\", line 2, in _inf\n    return _inf(x)\n           ^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpt9oo7lvh.py\", line 2, in _inf\n    return _inf(x)\n           ^^^^^^^\n  [Previous line repeated 996 more times]\nRecursionError: maximum recursion depth exceeded\n"
+      ]
+    },
+    {
+      "task_id": "hard_006_hard01_merge_intervals_operator_flip",
+      "mutation_category": "operator_flip",
+      "agent_type": "standard_react",
+      "solved": false,
+      "attempts": 5,
+      "total_loops": 5,
+      "total_tokens_used": 1913.5,
+      "error_history": [
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpdxu0twwk.py\", line 16, in <module>\n    assert solve(src) == [[1, 5], [8, 10]]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpshc_uusc.py\", line 17, in <module>\n    assert solve(src) == [[1, 5], [8, 10]]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmp8rf08n0c.py\", line 17, in <module>\n    assert solve(src) == [[1, 5], [8, 10]]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmp8_szxg6l.py\", line 17, in <module>\n    assert solve(src) == [[1, 5], [8, 10]]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpdq9qnufi.py\", line 17, in <module>\n    assert solve(src) == [[1, 5], [8, 10]]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+      ]
+    },
+    {
+      "task_id": "hard_007_hard01_merge_intervals_none_propagation",
+      "mutation_category": "none_propagation",
+      "agent_type": "standard_react",
+      "solved": true,
+      "attempts": 2,
+      "total_loops": 1,
+      "total_tokens_used": 279.0,
+      "error_history": [
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpzclbr8fr.py\", line 20, in <module>\n    _ = val.strip()\n        ^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'strip'\n"
+      ]
+    },
+    {
+      "task_id": "hard_008_hard01_merge_intervals_wrong_return_scope",
+      "mutation_category": "wrong_return_scope",
+      "agent_type": "standard_react",
+      "solved": true,
+      "attempts": 2,
+      "total_loops": 1,
+      "total_tokens_used": 274.5,
+      "error_history": [
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpy_ibuk0n.py\", line 16, in <module>\n    assert solve(src) == [[1, 5], [8, 10]]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+      ]
+    },
+    {
+      "task_id": "hard_009_hard01_merge_intervals_while_loop_stall",
+      "mutation_category": "while_loop_stall",
+      "agent_type": "standard_react",
+      "solved": true,
+      "attempts": 2,
+      "total_loops": 1,
+      "total_tokens_used": 90.0,
+      "error_history": [
+        "TimeoutError: Execution exceeded 2 seconds."
+      ]
+    },
+    {
+      "task_id": "hard_010_hard01_merge_intervals_mutable_alias_bug",
+      "mutation_category": "mutable_alias_bug",
+      "agent_type": "standard_react",
+      "solved": true,
+      "attempts": 3,
+      "total_loops": 2,
+      "total_tokens_used": 596.25,
+      "error_history": [
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmptm4z0suw.py\", line 22, in <module>\n    assert a == [1, 2]\n           ^^^^^^^^^^^\nAssertionError\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpks5fa8pn.py\", line 23, in <module>\n    assert a == [1, 2]\n           ^^^^^^^^^^^\nAssertionError\n"
+      ]
+    },
+    {
+      "task_id": "hard_011_hard02_rpn_evaluator_remove_guard",
+      "mutation_category": "remove_guard",
+      "agent_type": "standard_react",
+      "solved": true,
+      "attempts": 2,
+      "total_loops": 1,
+      "total_tokens_used": 349.75,
+      "error_history": [
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpy43wbqyc.py\", line 25, in <module>\n    assert solve([]) == 0\n           ^^^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpy43wbqyc.py\", line 21, in solve\n    return stack[len(stack) - 1]\n           ~~~~~^^^^^^^^^^^^^^^^\nIndexError: list index out of range\n"
+      ]
+    },
+    {
+      "task_id": "hard_012_hard02_rpn_evaluator_off_by_one",
+      "mutation_category": "off_by_one",
+      "agent_type": "standard_react",
+      "solved": false,
+      "attempts": 5,
+      "total_loops": 5,
+      "total_tokens_used": 2911.5,
+      "error_history": [
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpqjed35k6.py\", line 24, in <module>\n    assert solve(['2', '1', '+', '3', '*']) == 9\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpqjed35k6.py\", line 23, in solve\n    return stack[len(stack)]\n           ~~~~~^^^^^^^^^^^^\nIndexError: list index out of range\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmp7blzjer4.py\", line 27, in <module>\n    assert solve(['2', '1', '+', '3', '*']) == 9\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmp7blzjer4.py\", line 24, in solve\n    stack.append(int(tok))\n                 ^^^^^^^^\nValueError: invalid literal for int() with base 10: '*'\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpth9i374t.py\", line 27, in <module>\n    assert solve(['2', '1', '+', '3', '*']) == 9\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpth9i374t.py\", line 24, in solve\n    stack.append(int(tok))\n                 ^^^^^^^^\nValueError: invalid literal for int() with base 10: '*'\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpqjqj9yzd.py\", line 27, in <module>\n    assert solve(['2', '1', '+', '3', '*']) == 9\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpqjqj9yzd.py\", line 24, in solve\n    stack.append(int(tok))\n                 ^^^^^^^^\nValueError: invalid literal for int() with base 10: '*'\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpgo6bjf1g.py\", line 27, in <module>\n    assert solve(['2', '1', '+', '3', '*']) == 9\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpgo6bjf1g.py\", line 24, in solve\n    stack.append(int(tok))\n                 ^^^^^^^^\nValueError: invalid literal for int() with base 10: '*'\n"
+      ]
+    },
+    {
+      "task_id": "hard_013_hard02_rpn_evaluator_unsafe_dict_get",
+      "mutation_category": "unsafe_dict_get",
+      "agent_type": "standard_react",
+      "solved": true,
+      "attempts": 2,
+      "total_loops": 1,
+      "total_tokens_used": 327.75,
+      "error_history": [
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmp6cxl_s5l.py\", line 28, in <module>\n    _ = {}['missing_key']\n        ~~^^^^^^^^^^^^^^^\nKeyError: 'missing_key'\n"
+      ]
+    },
+    {
+      "task_id": "hard_014_hard02_rpn_evaluator_strip_str_cast",
+      "mutation_category": "strip_str_cast",
+      "agent_type": "standard_react",
+      "solved": true,
+      "attempts": 2,
+      "total_loops": 1,
+      "total_tokens_used": 331.5,
+      "error_history": [
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmp0hrq5_0q.py\", line 28, in <module>\n    _ = 'val_' + 123\n        ~~~~~~~^~~~~\nTypeError: can only concatenate str (not \"int\") to str\n"
+      ]
+    },
+    {
+      "task_id": "hard_015_hard02_rpn_evaluator_infinite_recursion",
+      "mutation_category": "infinite_recursion",
+      "agent_type": "standard_react",
+      "solved": true,
+      "attempts": 2,
+      "total_loops": 1,
+      "total_tokens_used": 222.0,
+      "error_history": [
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpry7fw20d.py\", line 3, in <module>\n    _inf(1)\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpry7fw20d.py\", line 2, in _inf\n    return _inf(x)\n           ^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpry7fw20d.py\", line 2, in _inf\n    return _inf(x)\n           ^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpry7fw20d.py\", line 2, in _inf\n    return _inf(x)\n           ^^^^^^^\n  [Previous line repeated 996 more times]\nRecursionError: maximum recursion depth exceeded\n"
+      ]
+    },
+    {
+      "task_id": "hard_016_hard02_rpn_evaluator_operator_flip",
+      "mutation_category": "operator_flip",
+      "agent_type": "standard_react",
+      "solved": true,
+      "attempts": 3,
+      "total_loops": 2,
+      "total_tokens_used": 810.5,
+      "error_history": [
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpz4ppf5s3.py\", line 24, in <module>\n    assert solve(['2', '1', '+', '3', '*']) == 9\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpz4ppf5s3.py\", line 8, in solve\n    raise ValueError('Malformed RPN')\nValueError: Malformed RPN\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpfxhqrvoh.py\", line 25, in <module>\n    assert solve(['2', '1', '+', '3', '*']) == 9\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpfxhqrvoh.py\", line 8, in solve\n    raise ValueError('Malformed RPN')\nValueError: Malformed RPN\n"
+      ]
+    },
+    {
+      "task_id": "hard_017_hard02_rpn_evaluator_none_propagation",
+      "mutation_category": "none_propagation",
+      "agent_type": "standard_react",
+      "solved": true,
+      "attempts": 2,
+      "total_loops": 1,
+      "total_tokens_used": 334.5,
+      "error_history": [
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmp_nk_1cpv.py\", line 29, in <module>\n    _ = val.strip()\n        ^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'strip'\n"
+      ]
+    },
+    {
+      "task_id": "hard_018_hard02_rpn_evaluator_wrong_return_scope",
+      "mutation_category": "wrong_return_scope",
+      "agent_type": "standard_react",
+      "solved": true,
+      "attempts": 2,
+      "total_loops": 1,
+      "total_tokens_used": 333.0,
+      "error_history": [
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpocv4g7qh.py\", line 24, in <module>\n    assert solve(['2', '1', '+', '3', '*']) == 9\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+      ]
+    },
+    {
+      "task_id": "hard_019_hard02_rpn_evaluator_while_loop_stall",
+      "mutation_category": "while_loop_stall",
+      "agent_type": "standard_react",
+      "solved": true,
+      "attempts": 2,
+      "total_loops": 1,
+      "total_tokens_used": 90.25,
+      "error_history": [
+        "TimeoutError: Execution exceeded 2 seconds."
+      ]
+    },
+    {
+      "task_id": "hard_020_hard02_rpn_evaluator_mutable_alias_bug",
+      "mutation_category": "mutable_alias_bug",
+      "agent_type": "standard_react",
+      "solved": true,
+      "attempts": 2,
+      "total_loops": 1,
+      "total_tokens_used": 331.0,
+      "error_history": [
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmp84pjnb9u.py\", line 31, in <module>\n    assert a == [1, 2]\n           ^^^^^^^^^^^\nAssertionError\n"
+      ]
+    }
+  ],
+  "gfm_agent": [
+    {
+      "task_id": "hard_001_hard01_merge_intervals_remove_guard",
+      "mutation_category": "remove_guard",
+      "agent_type": "gfm_agent",
+      "solved": false,
+      "attempts": 2,
+      "total_loops": 1,
+      "cycles_prevented": 1,
+      "total_tokens_used": 435.25,
+      "error_history": [
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpk69la8st.py\", line 16, in <module>\n    assert solve([]) == []\n           ^^^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpk69la8st.py\", line 3, in solve\n    merged = [ordered[0]]\n              ~~~~~~~^^^\nIndexError: list index out of range\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpd7wx7vcg.py\", line 16, in <module>\n    assert solve([]) == []\n           ^^^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpd7wx7vcg.py\", line 3, in solve\n    merged = [ordered[0]]\n              ~~~~~~~^^^\nIndexError: list index out of range\n"
+      ]
+    },
+    {
+      "task_id": "hard_002_hard01_merge_intervals_off_by_one",
+      "mutation_category": "off_by_one",
+      "agent_type": "gfm_agent",
+      "solved": false,
+      "attempts": 2,
+      "total_loops": 1,
+      "cycles_prevented": 1,
+      "total_tokens_used": 452.25,
+      "error_history": [
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpo41ox4di.py\", line 16, in <module>\n    assert solve(src) == [[1, 5], [8, 10]]\n           ^^^^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpo41ox4di.py\", line 8, in solve\n    last = merged[len(merged)]\n           ~~~~~~^^^^^^^^^^^^^\nIndexError: list index out of range\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpexwx4i_r.py\", line 16, in <module>\n    assert solve(src) == [[1, 5], [8, 10]]\n           ^^^^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpexwx4i_r.py\", line 8, in solve\n    last = merged[len(merged)]\n           ~~~~~~^^^^^^^^^^^^^\nIndexError: list index out of range\n"
+      ]
+    },
+    {
+      "task_id": "hard_003_hard01_merge_intervals_unsafe_dict_get",
+      "mutation_category": "unsafe_dict_get",
+      "agent_type": "gfm_agent",
+      "solved": false,
+      "attempts": 2,
+      "total_loops": 1,
+      "cycles_prevented": 1,
+      "total_tokens_used": 460.75,
+      "error_history": [
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpnesx7gd2.py\", line 19, in <module>\n    _ = {}['missing_key']\n        ~~^^^^^^^^^^^^^^^\nKeyError: 'missing_key'\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpps26o275.py\", line 19, in <module>\n    _ = {}['missing_key']\n        ~~^^^^^^^^^^^^^^^\nKeyError: 'missing_key'\n"
+      ]
+    },
+    {
+      "task_id": "hard_004_hard01_merge_intervals_strip_str_cast",
+      "mutation_category": "strip_str_cast",
+      "agent_type": "gfm_agent",
+      "solved": true,
+      "attempts": 4,
+      "total_loops": 1,
+      "cycles_prevented": 2,
+      "total_tokens_used": 726.25,
+      "error_history": [
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpzyhdgx4a.py\", line 19, in <module>\n    _ = 'val_' + 123\n        ~~~~~~~^~~~~\nTypeError: can only concatenate str (not \"int\") to str\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmppm1ba1v1.py\", line 20, in <module>\n    _ = 'val_' + 123\n        ~~~~~~~^~~~~\nTypeError: can only concatenate str (not \"int\") to str\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmp85np3l7n.py\", line 20, in <module>\n    _ = 'val_' + 123\n        ~~~~~~~^~~~~\nTypeError: can only concatenate str (not \"int\") to str\n"
+      ]
+    },
+    {
+      "task_id": "hard_005_hard01_merge_intervals_infinite_recursion",
+      "mutation_category": "infinite_recursion",
+      "agent_type": "gfm_agent",
+      "solved": true,
+      "attempts": 2,
+      "total_loops": 1,
+      "cycles_prevented": 0,
+      "total_tokens_used": 81.25,
+      "error_history": [
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmp1f_ahs2q.py\", line 3, in <module>\n    _inf(1)\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmp1f_ahs2q.py\", line 2, in _inf\n    return _inf(x)\n           ^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmp1f_ahs2q.py\", line 2, in _inf\n    return _inf(x)\n           ^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmp1f_ahs2q.py\", line 2, in _inf\n    return _inf(x)\n           ^^^^^^^\n  [Previous line repeated 996 more times]\nRecursionError: maximum recursion depth exceeded\n"
+      ]
+    },
+    {
+      "task_id": "hard_006_hard01_merge_intervals_operator_flip",
+      "mutation_category": "operator_flip",
+      "agent_type": "gfm_agent",
+      "solved": false,
+      "attempts": 5,
+      "total_loops": 2,
+      "cycles_prevented": 3,
+      "total_tokens_used": 1129.0,
+      "error_history": [
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmp7korq0uh.py\", line 16, in <module>\n    assert solve(src) == [[1, 5], [8, 10]]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpvwjfigld.py\", line 17, in <module>\n    assert solve(src) == [[1, 5], [8, 10]]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpvbk2p9n4.py\", line 17, in <module>\n    assert solve(src) == [[1, 5], [8, 10]]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmphtvh52u5.py\", line 17, in <module>\n    assert solve(src) == [[1, 5], [8, 10]]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmptk60tz2n.py\", line 17, in <module>\n    assert solve(src) == [[1, 5], [8, 10]]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+      ]
+    },
+    {
+      "task_id": "hard_007_hard01_merge_intervals_none_propagation",
+      "mutation_category": "none_propagation",
+      "agent_type": "gfm_agent",
+      "solved": true,
+      "attempts": 3,
+      "total_loops": 1,
+      "cycles_prevented": 1,
+      "total_tokens_used": 485.75,
+      "error_history": [
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpkvnyq_rd.py\", line 20, in <module>\n    _ = val.strip()\n        ^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'strip'\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpcrd0kscl.py\", line 21, in <module>\n    _ = val.strip()\n        ^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'strip'\n"
+      ]
+    },
+    {
+      "task_id": "hard_008_hard01_merge_intervals_wrong_return_scope",
+      "mutation_category": "wrong_return_scope",
+      "agent_type": "gfm_agent",
+      "solved": true,
+      "attempts": 2,
+      "total_loops": 1,
+      "cycles_prevented": 0,
+      "total_tokens_used": 210.5,
+      "error_history": [
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpt78wb37w.py\", line 16, in <module>\n    assert solve(src) == [[1, 5], [8, 10]]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+      ]
+    },
+    {
+      "task_id": "hard_009_hard01_merge_intervals_while_loop_stall",
+      "mutation_category": "while_loop_stall",
+      "agent_type": "gfm_agent",
+      "solved": true,
+      "attempts": 2,
+      "total_loops": 1,
+      "cycles_prevented": 0,
+      "total_tokens_used": 76.0,
+      "error_history": [
+        "TimeoutError: Execution exceeded 2 seconds."
+      ]
+    },
+    {
+      "task_id": "hard_010_hard01_merge_intervals_mutable_alias_bug",
+      "mutation_category": "mutable_alias_bug",
+      "agent_type": "gfm_agent",
+      "solved": true,
+      "attempts": 3,
+      "total_loops": 1,
+      "cycles_prevented": 1,
+      "total_tokens_used": 474.75,
+      "error_history": [
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpb64hrwuo.py\", line 22, in <module>\n    assert a == [1, 2]\n           ^^^^^^^^^^^\nAssertionError\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmp75spqex5.py\", line 23, in <module>\n    assert a == [1, 2]\n           ^^^^^^^^^^^\nAssertionError\n"
+      ]
+    },
+    {
+      "task_id": "hard_011_hard02_rpn_evaluator_remove_guard",
+      "mutation_category": "remove_guard",
+      "agent_type": "gfm_agent",
+      "solved": false,
+      "attempts": 5,
+      "total_loops": 2,
+      "cycles_prevented": 3,
+      "total_tokens_used": 1374.0,
+      "error_history": [
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmplfkzfb6m.py\", line 25, in <module>\n    assert solve([]) == 0\n           ^^^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmplfkzfb6m.py\", line 21, in solve\n    return stack[len(stack) - 1]\n           ~~~~~^^^^^^^^^^^^^^^^\nIndexError: list index out of range\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmp4fkcqvvd.py\", line 25, in <module>\n    assert solve([]) == 0\n           ^^^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmp4fkcqvvd.py\", line 21, in solve\n    return stack[-1]\n           ~~~~~^^^^\nIndexError: list index out of range\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpwt6tvy6r.py\", line 25, in <module>\n    assert solve([]) == 0\n           ^^^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpwt6tvy6r.py\", line 21, in solve\n    return stack[-1]\n           ~~~~~^^^^\nIndexError: list index out of range\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpadrss2lr.py\", line 25, in <module>\n    assert solve([]) == 0\n           ^^^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpadrss2lr.py\", line 21, in solve\n    return stack[-1]\n           ~~~~~^^^^\nIndexError: list index out of range\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmp53ivhvdq.py\", line 25, in <module>\n    assert solve([]) == 0\n           ^^^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmp53ivhvdq.py\", line 21, in solve\n    return stack[-1]\n           ~~~~~^^^^\nIndexError: list index out of range\n"
+      ]
+    },
+    {
+      "task_id": "hard_012_hard02_rpn_evaluator_off_by_one",
+      "mutation_category": "off_by_one",
+      "agent_type": "gfm_agent",
+      "solved": true,
+      "attempts": 2,
+      "total_loops": 1,
+      "cycles_prevented": 0,
+      "total_tokens_used": 266.25,
+      "error_history": [
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmppy1r00d2.py\", line 24, in <module>\n    assert solve(['2', '1', '+', '3', '*']) == 9\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmppy1r00d2.py\", line 23, in solve\n    return stack[len(stack)]\n           ~~~~~^^^^^^^^^^^^\nIndexError: list index out of range\n"
+      ]
+    },
+    {
+      "task_id": "hard_013_hard02_rpn_evaluator_unsafe_dict_get",
+      "mutation_category": "unsafe_dict_get",
+      "agent_type": "gfm_agent",
+      "solved": true,
+      "attempts": 2,
+      "total_loops": 1,
+      "cycles_prevented": 0,
+      "total_tokens_used": 270.75,
+      "error_history": [
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmphai3g35e.py\", line 28, in <module>\n    _ = {}['missing_key']\n        ~~^^^^^^^^^^^^^^^\nKeyError: 'missing_key'\n"
+      ]
+    },
+    {
+      "task_id": "hard_014_hard02_rpn_evaluator_strip_str_cast",
+      "mutation_category": "strip_str_cast",
+      "agent_type": "gfm_agent",
+      "solved": true,
+      "attempts": 3,
+      "total_loops": 1,
+      "cycles_prevented": 1,
+      "total_tokens_used": 584.75,
+      "error_history": [
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpk8_4ff99.py\", line 28, in <module>\n    _ = 'val_' + 123\n        ~~~~~~~^~~~~\nTypeError: can only concatenate str (not \"int\") to str\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpsalsoauw.py\", line 28, in <module>\n    _ = 'val_' + 123\n        ~~~~~~~^~~~~\nTypeError: can only concatenate str (not \"int\") to str\n"
+      ]
+    },
+    {
+      "task_id": "hard_015_hard02_rpn_evaluator_infinite_recursion",
+      "mutation_category": "infinite_recursion",
+      "agent_type": "gfm_agent",
+      "solved": true,
+      "attempts": 2,
+      "total_loops": 1,
+      "cycles_prevented": 0,
+      "total_tokens_used": 81.5,
+      "error_history": [
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpiebj5ho3.py\", line 3, in <module>\n    _inf(1)\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpiebj5ho3.py\", line 2, in _inf\n    return _inf(x)\n           ^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpiebj5ho3.py\", line 2, in _inf\n    return _inf(x)\n           ^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpiebj5ho3.py\", line 2, in _inf\n    return _inf(x)\n           ^^^^^^^\n  [Previous line repeated 996 more times]\nRecursionError: maximum recursion depth exceeded\n"
+      ]
+    },
+    {
+      "task_id": "hard_016_hard02_rpn_evaluator_operator_flip",
+      "mutation_category": "operator_flip",
+      "agent_type": "gfm_agent",
+      "solved": false,
+      "attempts": 5,
+      "total_loops": 2,
+      "cycles_prevented": 3,
+      "total_tokens_used": 1418.5,
+      "error_history": [
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpatrwg5hv.py\", line 24, in <module>\n    assert solve(['2', '1', '+', '3', '*']) == 9\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpatrwg5hv.py\", line 8, in solve\n    raise ValueError('Malformed RPN')\nValueError: Malformed RPN\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpe5ejat1t.py\", line 24, in <module>\n    assert solve(['2', '1', '+', '3', '*']) == 9\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpe5ejat1t.py\", line 8, in solve\n    raise ValueError('Malformed RPN')\nValueError: Malformed RPN\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpazdc1jdd.py\", line 24, in <module>\n    assert solve(['2', '1', '+', '3', '*']) == 9\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpazdc1jdd.py\", line 8, in solve\n    raise ValueError('Malformed RPN')\nValueError: Malformed RPN\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmp0vfe_z8a.py\", line 24, in <module>\n    assert solve(['2', '1', '+', '3', '*']) == 9\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmp0vfe_z8a.py\", line 8, in solve\n    raise ValueError('Malformed RPN')\nValueError: Malformed RPN\n",
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmp14qbn5fd.py\", line 24, in <module>\n    assert solve(['2', '1', '+', '3', '*']) == 9\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmp14qbn5fd.py\", line 8, in solve\n    raise ValueError('Malformed RPN')\nValueError: Malformed RPN\n"
+      ]
+    },
+    {
+      "task_id": "hard_017_hard02_rpn_evaluator_none_propagation",
+      "mutation_category": "none_propagation",
+      "agent_type": "gfm_agent",
+      "solved": true,
+      "attempts": 2,
+      "total_loops": 1,
+      "cycles_prevented": 0,
+      "total_tokens_used": 282.5,
+      "error_history": [
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmp2z4zfz0j.py\", line 29, in <module>\n    _ = val.strip()\n        ^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'strip'\n"
+      ]
+    },
+    {
+      "task_id": "hard_018_hard02_rpn_evaluator_wrong_return_scope",
+      "mutation_category": "wrong_return_scope",
+      "agent_type": "gfm_agent",
+      "solved": true,
+      "attempts": 2,
+      "total_loops": 1,
+      "cycles_prevented": 0,
+      "total_tokens_used": 266.0,
+      "error_history": [
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpgp8cob02.py\", line 24, in <module>\n    assert solve(['2', '1', '+', '3', '*']) == 9\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+      ]
+    },
+    {
+      "task_id": "hard_019_hard02_rpn_evaluator_while_loop_stall",
+      "mutation_category": "while_loop_stall",
+      "agent_type": "gfm_agent",
+      "solved": true,
+      "attempts": 2,
+      "total_loops": 1,
+      "cycles_prevented": 0,
+      "total_tokens_used": 76.25,
+      "error_history": [
+        "TimeoutError: Execution exceeded 2 seconds."
+      ]
+    },
+    {
+      "task_id": "hard_020_hard02_rpn_evaluator_mutable_alias_bug",
+      "mutation_category": "mutable_alias_bug",
+      "agent_type": "gfm_agent",
+      "solved": true,
+      "attempts": 2,
+      "total_loops": 1,
+      "cycles_prevented": 0,
+      "total_tokens_used": 277.0,
+      "error_history": [
+        "Traceback (most recent call last):\n  File \"C:\\Users\\shiva\\AppData\\Local\\Temp\\tmpu4j8_ri7.py\", line 31, in <module>\n    assert a == [1, 2]\n           ^^^^^^^^^^^\nAssertionError\n"
+      ]
+    }
+  ],
+  "research_metrics": {
+    "loop_prevention_rate": 37.78,
+    "token_efficiency": {
+      "react_avg_tokens": 869.8,
+      "gfm_avg_tokens": 471.5,
+      "token_savings_pct": 45.79
+    },
+    "task_success_rate": {
+      "react_success_rate": 75.0,
+      "gfm_success_rate": 70.0,
+      "improvement_pct": -5.0
+    },
+    "detailed_stats": {
+      "total_tasks": 20,
+      "react_total_loops": 45,
+      "gfm_total_loops": 23,
+      "gfm_cycles_prevented": 17,
+      "react_avg_attempts": 3.0,
+      "gfm_avg_attempts": 2.7
+    },
+    "category_breakdown": {
+      "remove_guard": {
+        "tasks": 2,
+        "react_solved": 1,
+        "gfm_solved": 0,
+        "cycles_prevented": 4,
+        "react_tokens": 2624.75,
+        "gfm_tokens": 1809.25,
+        "react_pass_pct": 50.0,
+        "gfm_pass_pct": 0.0,
+        "token_savings_pct": 31.1
+      },
+      "off_by_one": {
+        "tasks": 2,
+        "react_solved": 0,
+        "gfm_solved": 1,
+        "cycles_prevented": 1,
+        "react_tokens": 5334.0,
+        "gfm_tokens": 718.5,
+        "react_pass_pct": 0.0,
+        "gfm_pass_pct": 50.0,
+        "token_savings_pct": 86.5
+      },
+      "unsafe_dict_get": {
+        "tasks": 2,
+        "react_solved": 1,
+        "gfm_solved": 1,
+        "cycles_prevented": 1,
+        "react_tokens": 2179.0,
+        "gfm_tokens": 731.5,
+        "react_pass_pct": 50.0,
+        "gfm_pass_pct": 50.0,
+        "token_savings_pct": 66.4
+      },
+      "strip_str_cast": {
+        "tasks": 2,
+        "react_solved": 2,
+        "gfm_solved": 2,
+        "cycles_prevented": 3,
+        "react_tokens": 1761.0,
+        "gfm_tokens": 1311.0,
+        "react_pass_pct": 100.0,
+        "gfm_pass_pct": 100.0,
+        "token_savings_pct": 25.6
+      },
+      "infinite_recursion": {
+        "tasks": 2,
+        "react_solved": 2,
+        "gfm_solved": 2,
+        "cycles_prevented": 0,
+        "react_tokens": 443.75,
+        "gfm_tokens": 162.75,
+        "react_pass_pct": 100.0,
+        "gfm_pass_pct": 100.0,
+        "token_savings_pct": 63.3
+      },
+      "operator_flip": {
+        "tasks": 2,
+        "react_solved": 1,
+        "gfm_solved": 0,
+        "cycles_prevented": 6,
+        "react_tokens": 2724.0,
+        "gfm_tokens": 2547.5,
+        "react_pass_pct": 50.0,
+        "gfm_pass_pct": 0.0,
+        "token_savings_pct": 6.5
+      },
+      "none_propagation": {
+        "tasks": 2,
+        "react_solved": 2,
+        "gfm_solved": 2,
+        "cycles_prevented": 1,
+        "react_tokens": 613.5,
+        "gfm_tokens": 768.25,
+        "react_pass_pct": 100.0,
+        "gfm_pass_pct": 100.0,
+        "token_savings_pct": -25.2
+      },
+      "wrong_return_scope": {
+        "tasks": 2,
+        "react_solved": 2,
+        "gfm_solved": 2,
+        "cycles_prevented": 0,
+        "react_tokens": 607.5,
+        "gfm_tokens": 476.5,
+        "react_pass_pct": 100.0,
+        "gfm_pass_pct": 100.0,
+        "token_savings_pct": 21.6
+      },
+      "while_loop_stall": {
+        "tasks": 2,
+        "react_solved": 2,
+        "gfm_solved": 2,
+        "cycles_prevented": 0,
+        "react_tokens": 180.25,
+        "gfm_tokens": 152.25,
+        "react_pass_pct": 100.0,
+        "gfm_pass_pct": 100.0,
+        "token_savings_pct": 15.5
+      },
+      "mutable_alias_bug": {
+        "tasks": 2,
+        "react_solved": 2,
+        "gfm_solved": 2,
+        "cycles_prevented": 1,
+        "react_tokens": 927.25,
+        "gfm_tokens": 751.75,
+        "react_pass_pct": 100.0,
+        "gfm_pass_pct": 100.0,
+        "token_savings_pct": 18.9
+      }
+    }
+  }
+}

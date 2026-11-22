@@ -1,0 +1,11 @@
+This is a placeholder file for the architecture diagram.
+The actual diagram should be created using a tool like:
+- draw.io
+- Lucidchart
+- matplotlib/graphviz for programmatic generation
+
+The diagram should illustrate:
+1. LLM Agent execution loop
+2. GFM components (Graph Memory, AST Hasher, Context Pruner)
+3. Data flow between agent and GFM
+4. Error detection and recovery process
